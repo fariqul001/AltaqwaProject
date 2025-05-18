@@ -1,0 +1,108 @@
+﻿@model FundManagementSystem.ViewModels.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<!-- You can move this CSS to a separate file if you prefer -->
+<style>
+    .admin-nav {
+      background-color: #888652;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    .admin-nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .admin-box {
+      padding: 30px;
+      max-width: 1000px;
+      margin: 80px auto;
+    }
+    .request-card, .user-card {
+      border: 1px solid #b1b163;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .admin-actions button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+    .approve-btn {
+      background-color: #4caf50;
+    }
+    .reject-btn {
+      background-color: #f44336;
+    }
+    .section-title {
+      margin-top: 40px;
+      font-size: 24px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+</style>
+
+<div class="topbar">
+    <div class="logo">Al Taqwa Ltd - Admin Panel</div>
+</div>
+
+<div class="admin-nav">
+    <div>Welcome, Admin</div>
+    <div>
+        <a href="#requests">Fund Requests</a>
+        <a href="#users">User List</a>
+        <a href="#company">Company Status</a>
+    </div>
+</div>
+
+<div class="admin-box">
+
+    <!-- Fund Requests Section -->
+    <h2 id="requests" class="section-title">Fund Requests</h2>
+    <div class="request-card">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> johndoe@email.com</p>
+        <p><strong>Mobile:</strong> +880123456789</p>
+        <p><strong>NID:</strong> 1234567890</p>
+        <p><strong>Fund Amount:</strong> ৳15,000</p>
+        <p><strong>Status:</strong> Pending</p>
+        <p><strong>Fund Slip:</strong></p>
+        <img src="uploads/fund-slip.jpg" alt="Fund Slip" width="300px">
+
+        <div class="admin-actions">
+            <button class="approve-btn">Approve</button>
+            <button class="reject-btn">Reject</button>
+        </div>
+    </div>
+
+    <!-- User List Section -->
+    <h2 id="users" class="section-title">User List</h2>
+    @* Example of dynamic user list *@
+    @foreach (var user in Model.Users)
+    {
+        <div class="user-card">
+            <p><strong>User:</strong> @user.FullName</p>
+            <p><strong>Email:</strong> @user.Email</p>
+            <p><strong>Fund Total:</strong> ৳@user.TotalFundAmount</p>
+            <a href="#">View Profile</a>
+        </div>
+    }
+
+    <!-- Company Status Section -->
+    <h2 id="company" class="section-title">Company Status</h2>
+    <p><strong>Total Members:</strong> @Model.Users.Count</p>
+    <p><strong>Total Fund Collected:</strong> ৳@Model.TotalFunds</p>
+    <p><strong>Approved Requests:</strong> 18</p>
+    <p><strong>Pending Requests:</strong> 7</p>
+</div>

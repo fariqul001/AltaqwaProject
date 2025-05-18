@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home - Al Taqwa Ltd";
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+
+<header class="navbar">
+    <div class="logo">Al Taqwa Limited</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Plan</a></li>
+            <li><a href="#">Explore Funds</a></li>
+        </ul>
+    </nav>
+    <div class="buttons">
+        <button class="invest-btn" onclick="location.href='@Url.Action("AdminDashboard", "Home")'">Admin</button>
+
+        <a href="@Url.Action("Login", "Account")" class="login-btn">Login</a>
+    </div>
+</header>
+
+<div class="line-container">
+    <div class="top-line"></div>
+    <div class="bottom-line"></div>
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Wherever you may be in your investment journey</h2>
+        <h1>We have a Mutual Fund that fits</h1>
+        <div class="hero-buttons">
+            <button class="learn-more">Learn More</button>
+            <button class="invest-now">Invest Now</button>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="@Url.Content("~/images/first.jpg")" alt="Hero Image" />
+    </div>
+</section>
+
+<section class="get-started-section">
+    <div class="get-started-image">
+        <img src="@Url.Content("~/images/rrr.jpg")" alt="Lime Drinks" />
+    </div>
+    <div class="get-started-content">
+        <h3>Get started</h3>
+        <h1>Even with BDT 1500/Month</h1>
+        <button>Systematic Investment Plan</button>
+    </div>
+</section>

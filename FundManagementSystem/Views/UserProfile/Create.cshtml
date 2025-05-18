@@ -1,0 +1,16 @@
+﻿@model FundManagementSystem.Models.UserProfile
+
+<h2>User Information Form</h2>
+
+<form asp-action="Create" method="post">
+    <label>Full Name</label>
+    <input asp-for="FullName" class="form-control" />
+    <label>Address</label>
+    <input asp-for="Address" class="form-control" />
+    <label>Phone Number</label>
+    <input asp-for="PhoneNumber" class="form-control" />
+    <label>NID</label>
+    <input asp-for="NID" class="form-control" />
+
+    <button type="submit">Save & Go to Profile</button>
+</form>

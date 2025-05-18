@@ -1,0 +1,264 @@
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+    .navbar .logo {
+        font-size: 36px;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
+
+    .navbar .buttons button {
+        margin-left: 10px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+.invest-btn {
+    background-color: #7b3e19;
+    color: white;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #99923d;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-primary:hover {
+        background-color: #7e792f;
+    }
+
+/* --- Line Divider --- */
+.line-container {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+}
+
+.top-line, .bottom-line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+
+.top-line {
+    position: absolute;
+    top: 0;
+}
+
+.bottom-line {
+    position: absolute;
+    bottom: 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+    .hero-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+.hero-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero-buttons .invest-now {
+    background-color: white;
+    color: #333;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+/* --- Get Started Section --- */
+.get-started-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #387d7a;
+    color: white;
+    padding: 4rem 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.get-started-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+    .get-started-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+.get-started-content {
+    flex: 1;
+    padding: 2rem;
+    min-width: 300px;
+}
+
+    .get-started-content h3 {
+        font-size: 1.2rem;
+        color: #f1e775;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .get-started-content h1 {
+        font-size: 2.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .get-started-content button {
+        margin-top: 1.5rem;
+        background-color: #f1e775;
+        color: black;
+        border: none;
+        padding: 12px 24px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: background 0.3s ease;
+    }
+
+        .get-started-content button:hover {
+            background-color: #e6d852;
+        }
+
+/* --- Login Page --- */
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding-top: 100px; /* navbar height */
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+input, label, button {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.checkbox-group {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

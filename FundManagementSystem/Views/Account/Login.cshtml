@@ -1,0 +1,57 @@
+﻿@model FundManagementSystem.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login - Al Taqwa Ltd";
+    Layout = "_Layout";
+}
+
+<div class="topbar">
+    <div class="logo">Al Taqwa Ltd</div>
+</div>
+
+<div class="container">
+    <div class="login-section">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+
+            <form asp-action="Login" method="post">
+                @Html.AntiForgeryToken() <!-- ✅ This line prevents HTTP 400 -->
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input asp-for="RememberMe" type="checkbox" />
+                    <label asp-for="RememberMe"> Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <span>
+                    Don’t have an account?
+                    <a href="@Url.Action("Register", "Account")">Register here</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Al Taqwa Ltd. All rights reserved.</p>
+</footer>
+
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
