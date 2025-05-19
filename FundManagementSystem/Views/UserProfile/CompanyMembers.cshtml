@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Company Member Details";
+    Layout = "_Layout";
+}
+
+<h3>Company Member Details</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.FullName</td>
+                <td>@member.User?.Email</td>
+                <td>@member.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

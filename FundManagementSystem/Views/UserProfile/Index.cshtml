@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "User Dashboard";
+    Layout = "_Layout";
+}
+
+<style>
+    body {
+        background: #f6fff7;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .navbar {
+        background: #2ecc40 !important;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 2px 8px rgba(44, 204, 64, 0.1);
+    }
+
+        .navbar .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar .btn {
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            margin-right: 10px;
+            transition: background 0.2s;
+        }
+
+            .navbar .btn:hover, .navbar .btn:focus {
+                background: #219150;
+                color: #fff;
+            }
+
+    .container-dashboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+    }
+
+    .dashboard-title {
+        color: #27ae60;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .dashboard-subtitle {
+        color: #555;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+  
+</style>
+
+<nav class="navbar navbar-expand-lg mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="#">Al Taqwa Ltd</a>
+        <div>
+            <a class="btn mx-2" asp-action="CompanyMembers" asp-controller="UserProfile">Company Member Details</a>
+            <a class="btn mx-2" asp-action="Details" asp-controller="UserProfile">User Profile</a>
+            <a class="btn mx-2" asp-action="FundRequest" asp-controller="UserProfile">Fund Request/Payment</a>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-dashboard">
+    <div class="dashboard-title">Welcome, @User.Identity.Name!</div>
+    <div class="dashboard-subtitle">Select an option above to view your details, profile, or request funds.</div>
+</div>

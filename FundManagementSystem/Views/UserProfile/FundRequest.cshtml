@@ -1,0 +1,32 @@
+﻿@model FundManagementSystem.Models.FundRequest
+
+@{
+    ViewData["Title"] = "Fund Request";
+    Layout = "_Layout";
+}
+
+<h3>Request Fund</h3>
+
+<validation-summary asp-validation-summary="ModelOnly" class="text-danger"></validation-summary>
+
+<form asp-action="FundRequest" method="post">
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Month"></label>
+        <input asp-for="Month" class="form-control" />
+        <span asp-validation-for="Month" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit Request</button>
+</form>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">@ViewBag.Message</div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
